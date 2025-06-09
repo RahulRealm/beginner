@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & About - Sankalp Public School</title>
+    <style>
+        /* Base styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary: #4A2511;
+            --accent: #FF7F50;
+            --bg-light: #f8f5f0;
+            --success: #4CAF50;
+            --info: #2196F3;
+            --warning: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 80px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .hero {
+            background: var(--bg-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .accent {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            border-bottom: 2px solid #eee;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-bg {
+            background: var(--bg-light);
+        }
+
+        /* Contact Info */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-icon.primary { background: var(--accent); }
+        .contact-icon.success { background: var(--success); }
+        .contact-icon.info { background: var(--info); }
+        .contact-icon.warning { background: var(--warning); }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #FF6B41;
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Faculty Cards */
+        .faculty-card {
+            background: var(--bg-light);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .faculty-card:hover {
+            transform: scale(1.05);
+        }
+
+        .faculty-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .faculty-info {
+            padding: 1.5rem;
+        }
+
+        .faculty-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-position {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .faculty-details {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .faculty-details div {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Achievements */
+        .achievement-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .achievement-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .dark-section .card {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tab-nav {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .tab-btn {
+                padding: 0.75rem;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Icons (using Unicode symbols) */
+        .icon-phone::before { content: "📞"; }
+        .icon-email::before { content: "✉️"; }
+        .icon-location::before { content: "📍"; }
+        .icon-clock::before { content: "🕒"; }
+        .icon-send::before { content: "📤"; }
+        .icon-award::before { content: "🏆"; }
+        .icon-users::before { content: "👥"; }
+        .icon-book::before { content: "📚"; }
+        .icon-star::before { content: "⭐"; }
+        .icon-target::before { content: "🎯"; }
+        .icon-eye::before { content: "👁️"; }
+        .icon-heart::before { content: "❤️"; }
+        .icon-graduation::before { content: "🎓"; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    Sankalp Public School<span>.</span>
+                </a>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#about" class="tab-link">About</a>
+                    <a href="#contact" class="tab-link">Contact</a>
+                    <a href="#programs">Programs</a>
+                    <a href="#campus">Campus</a>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section">
+            <div class="container">
+                <h1>Contact & <span class="accent">About Us</span></h1>
+                <p>Learn more about Sankalp Public School and get in touch with our team</p>
+                
+                <!-- Tab Navigation -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="contact">Contact Us</button>
+                    <button class="tab-btn" data-tab="about">About School</button>
+                    <button class="tab-btn" data-tab="faculty">Our Faculty</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Tab -->
+        <section id="contact-tab" class="tab-content active section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 style="margin-bottom: 2rem; font-size: 2rem;">Contact Information</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon primary">
+                                <span class="icon-location"></span>
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Address</h3>
+                                <p style="color: #666;">
+                                    123 Education Lane<br>
+                                    Learning City, LC 12345<br>
+                                    United States
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon success">
+                                <span class="icon-phone"></span>
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Phone</h3>
+                                <p style="color: #666;">
+                                    Main Office: (555) 123-4567<br>
+                                    Admissions: (555) 123-4568<br>
+                                    Emergency: (555) 123-4569
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon info">
+                                <span class="icon-email"></span>
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Email</h3>
+                                <p style="color: #666;">
+                                    General: info@sankalpschool.com<br>
+                                    Admissions: admissions@sankalpschool.com<br>
+                                    Principal: principal@sankalpschool.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon warning">
+                                <span class="icon-clock"></span>
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Office Hours</h3>
+                                <p style="color: #666;">
+                                    Monday - Friday: 8:00 AM - 5:00 PM<br>
+                                    Saturday: 9:00 AM - 2:00 PM<br>
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="card card-bg" style="margin-top: 2rem;">
+                            <h3 style="margin-bottom: 1rem; text-align: center;">Quick Facts</h3>
+                            <div class="stats-grid">
+                                <div>
+                                    <div class="stat-number" style="color: var(--accent);">15+</div>
+                                    <div class="stat-label">Years of Excellence</div>
+                                </div>
+                                <div>
+                                    <div class="stat-number" style="color: var(--success);">500+</div>
+                                    <div class="stat-label">Happy Students</div>
+                                </div>
+                                <div>
+                                    <div class="stat-number" style="color: var(--info);">50+</div>
+                                    <div class="stat-label">Expert Teachers</div>
+                                </div>
+                                <div>
+                                    <div class="stat-number" style="color: var(--warning);">98%</div>
+                                    <div class="stat-label">Success Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="card card-bg">
+                        <h2 style="margin-bottom: 1.5rem;">Send us a Message</h2>
+                        <form id="contactForm">
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" class="form-control" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="programs">Program Information</option>
+                                    <option value="campus-tour">Campus Tour Request</option>
+                                    <option value="general">General Information</option>
+                                    <option value="support">Student Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Please tell us how we can help you..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-full">
+                                <span class="icon-send"></span>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tab -->
+        <section id="about-tab" class="tab-content section">
+            <div class="container">
+                <!-- School Story -->
+                <div class="grid grid-2" style="margin-bottom: 4rem;">
+                    <div>
+                        <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">Our Story</h2>
+                        <p style="margin-bottom: 1.5rem; color: #666;">
+                            Founded in 2009, Sankalp Public School began with a simple yet powerful vision: to create an educational environment where every child can discover their unique potential and develop the skills needed to thrive in an ever-changing world.
+                        </p>
+                        <p style="margin-bottom: 1.5rem; color: #666;">
+                            What started as a small community school with just 50 students has grown into a premier educational institution serving over 500 students across multiple campuses. Our commitment to academic excellence, character development, and innovative teaching methods has made us a trusted choice for families seeking quality education.
+                        </p>
+                        <p style="color: #666;">
+                            Today, we continue to evolve and adapt our programs to meet the needs of 21st-century learners while maintaining our core values of integrity, compassion, and excellence.
+                        </p>
+                    </div>
+                    <div style="position: relative;">
+                        <img src="https://images.pexels.com/photos/8535264/pexels-photo-8535264.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Students learning together" 
+                             style="width: 100%; height: 300px; object-fit: cover; border-radius: 1rem;">
+                        <div style="position: absolute; bottom: -1rem; left: -1rem; background: var(--accent); color: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <div style="font-size: 2rem; font-weight: bold;">15+</div>
+                            <div style="font-size: 0.9rem;">Years of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission, Vision, Values -->
+                <div class="grid grid-3" style="margin-bottom: 4rem;">
+                    <div class="card" style="text-align: center;">
+                        <div class="achievement-icon primary">
+                            <span class="icon-target"></span>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Our Mission</h3>
+                        <p style="color: #666;">
+                            To provide a nurturing and challenging educational environment that empowers students to become confident, creative, and responsible global citizens.
+                        </p>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div class="achievement-icon success">
+                            <span class="icon-eye"></span>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Our Vision</h3>
+                        <p style="color: #666;">
+                            To be a leading educational institution that inspires lifelong learning, fosters innovation, and develops future leaders who make a positive impact on the world.
+                        </p>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div class="achievement-icon info">
+                            <span class="icon-heart"></span>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Our Values</h3>
+                        <p style="color: #666;">
+                            Excellence, Integrity, Compassion, Innovation, Respect, and Responsibility guide everything we do in our educational community.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Educational Philosophy -->
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="margin-bottom: 2rem; font-size: 2rem;">Our Educational Philosophy</h2>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem;">Holistic Development</h3>
+                        <p style="color: #666;">
+                            We believe in nurturing not just academic excellence but also emotional, social, and physical development to create well-rounded individuals.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem;">Individual Attention</h3>
+                        <p style="color: #666;">
+                            Every child is unique. Our small class sizes and personalized approach ensure each student receives the attention they need to thrive.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem;">Innovation in Learning</h3>
+                        <p style="color: #666;">
+                            We embrace modern teaching methodologies and technology to make learning engaging, interactive, and relevant to today's world.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem;">Character Building</h3>
+                        <p style="color: #666;">
+                            Beyond academics, we focus on building strong moral values, leadership skills, and social responsibility in our students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Tab -->
+        <section id="faculty-tab" class="tab-content section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="margin-bottom: 1rem; font-size: 2rem;">Meet Our <span style="color: var(--accent);">Expert Faculty</span></h2>
+                    <p style="color: #666; max-width: 600px; margin: 0 auto;">
+                        Our dedicated team of educators brings together decades of experience, advanced qualifications, and a passion for nurturing young minds.
+                    </p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Faculty Member 1 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Dr. Sarah Johnson" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Dr. Sarah Johnson</div>
+                            <div class="faculty-position">Principal & Educational Director</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> Ph.D. in Educational Leadership, Harvard University</div>
+                                <div><span class="icon-award"></span> 15+ years in educational administration</div>
+                                <div><span class="icon-star"></span> Curriculum Development & School Management</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 2 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Prof. Michael Chen" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Prof. Michael Chen</div>
+                            <div class="faculty-position">Head of STEM Department</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> M.S. in Computer Science, MIT</div>
+                                <div><span class="icon-award"></span> 12+ years in STEM education</div>
+                                <div><span class="icon-star"></span> Robotics, Programming & Mathematics</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 3 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Ms. Emily Rodriguez" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Ms. Emily Rodriguez</div>
+                            <div class="faculty-position">Early Childhood Education Coordinator</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> M.Ed. in Early Childhood Development, Stanford</div>
+                                <div><span class="icon-award"></span> 10+ years with young learners</div>
+                                <div><span class="icon-star"></span> Child Psychology & Development</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 4 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Dr. James Wilson" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Dr. James Wilson</div>
+                            <div class="faculty-position">Arts & Creative Director</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> Ph.D. in Fine Arts, Yale University</div>
+                                <div><span class="icon-award"></span> 18+ years in arts education</div>
+                                <div><span class="icon-star"></span> Visual Arts, Music & Theater</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 5 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Ms. Priya Patel" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Ms. Priya Patel</div>
+                            <div class="faculty-position">Language Arts Coordinator</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> M.A. in English Literature, Oxford</div>
+                                <div><span class="icon-award"></span> 8+ years in language education</div>
+                                <div><span class="icon-star"></span> Creative Writing & Literature</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Member 6 -->
+                    <div class="faculty-card">
+                        <img src="https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Coach David Thompson" class="faculty-image">
+                        <div class="faculty-info">
+                            <div class="faculty-name">Coach David Thompson</div>
+                            <div class="faculty-position">Physical Education Director</div>
+                            <div class="faculty-details">
+                                <div><span class="icon-graduation"></span> B.S. in Kinesiology, UCLA</div>
+                                <div><span class="icon-award"></span> 14+ years in sports education</div>
+                                <div><span class="icon-star"></span> Athletic Development & Wellness</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="section dark-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="margin-bottom: 1rem;">Our Achievements</h2>
+                    <p style="color: #ccc; max-width: 600px; margin: 0 auto;">
+                        Recognition and awards that reflect our commitment to educational excellence
+                    </p>
+                </div>
+
+                <div class="grid grid-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon" style="background: var(--accent);">
+                            <span class="icon-award"></span>
+                        </div>
+                        <div class="achievement-title" style="color: var(--accent);">Excellence Award</div>
+                        <p style="color: #ccc;">Best Private School 2023</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon" style="background: var(--success);">
+                            <span class="icon-users"></span>
+                        </div>
+                        <div class="achievement-title" style="color: var(--success);">Community Impact</div>
+                        <p style="color: #ccc;">Outstanding Community Service</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon" style="background: var(--info);">
+                            <span class="icon-book"></span>
+                        </div>
+                        <div class="achievement-title" style="color: var(--info);">Academic Excellence</div>
+                        <p style="color: #ccc;">Top 10 Schools in Region</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon" style="background: var(--warning);">
+                            <span class="icon-star"></span>
+                        </div>
+                        <div class="achievement-title" style="color: var(--warning);">Innovation Award</div>
+                        <p style="color: #ccc;">Technology in Education 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab + '-tab').classList.add('active');
+                });
+            });
+
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Simple validation
+                if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                // Simulate form submission
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('.nav');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = 'var(--bg-light)';
+                nav.style.padding = '1rem';
+                nav.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-content')) {
+                    if (window.innerWidth <= 768) {
+                        nav.style.display = 'none';
+                    }
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'row';
+                    nav.style.position = 'static';
+                    nav.style.background = 'transparent';
+                    nav.style.padding = '0';
+                    nav.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
