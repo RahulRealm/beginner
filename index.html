@@ -3,366 +3,2269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sankalp Public School</title>
-    <style>
-        /* Base styles */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        :root {
-            --primary: #4A2511;
-            --accent: #FF7F50;
-            --bg-light: #f8f5f0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
-            color: var(--primary);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg-light);
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 2rem 4rem;
-            background: var(--bg-light);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #FF6B41;
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 2rem;
-        }
-
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Programs Section */
-        .programs {
-            padding: 4rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .programs-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .program-card {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .program-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .program-content {
-            padding: 1.5rem;
-        }
-
-        .program-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-light);
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-features {
-                justify-content: center;
-            }
-        }
-    </style>
+    <title>Sankalp Public School - Educational Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <a href="/beginner" class="logo">
-                Sankalp Public School<span>.</span>
-            </a>
-            <button class="mobile-menu-btn">☰</button>
-            <nav class="nav">
-                <a href="/beginner/about" class="nav-link">About</a>
-                <a href="#" class="nav-link">Programs</a>
-                <a href="#" class="nav-link">Resources</a>
-                <a href="#" class="nav-link">Campus</a>
-                
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Sankalp Public School<span class="accent">.</span></h1>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#campus" class="nav-link">Campus</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <!-- Mobile Get Started button (hidden on desktop) -->
+                <a href="#get-started" class="btn btn-outline">Get Started</a>
             </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Desktop Get Started button (hidden on mobile) -->
+            <a href="#get-started" class="btn btn-outline" style=" display: none ">Get Started</a>
         </div>
+        
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Putting your child's Future<br>
-                    in great motion
-                </h1>
-                <div class="hero-features">
-                    <div class="feature-item">
-                        <span>✓</span>
-                        <span>No Credit Card</span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+         <div style="
+    left: 3rem;
+    top: 5rem;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    opacity: .4;
+    --tw-text-opacity: 1;
+    color: rgb(255 127 80 / var(--tw-text-opacity));">
+    <svg viewBox="0 0 24 24" fill="none" class="w-full h-full text-[#FF7F50] opacity-40">
+        <path d="M12 8L6 14H18L12 8Z" fill="currentColor"></path>
+    </svg>
+</div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        Putting your <span class="text-primary">child's Future</span><br>
+                        <span class="text-primary">in great motion</span>
+                    </h2>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>No Credit Card</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>14 Days Trial</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Free For Teachers</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <span>✓</span>
-                        <span>14 Days Trial</span>
-                    </div>
-                    <div class="feature-item">
-                        <span>✓</span>
-                        <span>Free For Teachers</span>
+                    
+                    <button class="btn btn-primary hero-cta">
+                        Start Learning
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    
+                    <p class="hero-description">
+                        We just don't give our students only lecture but real life experiences.
+                    </p>
+                </div>
+                
+                <div class="hero-images">
+                    <div class="hero-image-container">
+                        <div class="bg-circle bg-circle-1"></div>
+                        <img src="https://images.pexels.com/photos/8535237/pexels-photo-8535237.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Happy child learning" class="hero-image main-image">
+                        <img src="https://images.pexels.com/photos/8535230/pexels-photo-8535230.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Child exploring" class="hero-image secondary-image">
+                        <div class="bg-circle bg-circle-2"></div>
                     </div>
                 </div>
-                <a href="#" class="btn btn-primary">
-                    Start Learning →
-                </a>
             </div>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">50+</div>
-                <p>Schools supported across 29 states</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">12k+</div>
-                <p>Students helped across the globe</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">70+</div>
-                <p>Available field workspaces</p>
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 21v-4a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v4"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m16 11 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="stat-number">50+</h3>
+                    <p class="stat-description">Schools are supported across 29 states</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="stat-number">12k+</h3>
+                    <p class="stat-description">Helping the students of all ages thrive</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="7" height="9" x="3" y="3" rx="1"/>
+                            <rect width="7" height="5" x="14" y="3" rx="1"/>
+                            <rect width="7" height="9" x="14" y="12" rx="1"/>
+                            <rect width="7" height="5" x="3" y="16" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="stat-number">70+</h3>
+                    <p class="stat-description">Available field workspaces and increasing</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="programs">
-        <h2 class="section-title">Our Programs</h2>
-        <div class="programs-grid">
-            <div class="program-card">
-                <img src="https://images.pexels.com/photos/8617855/pexels-photo-8617855.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Early Childhood" class="program-img">
-                <div class="program-content">
-                    <h3 class="program-title">Early Childhood Education</h3>
-                    <p>Building strong foundations for lifelong learning</p>
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="programs-header">
+                <div class="programs-text">
+                    <h2 class="section-title">
+                        Smart and clever kids<br>
+                        ready to <span class="text-brown">fly high!</span>
+                    </h2>
+                </div>
+                <div class="programs-cta">
+                    <p class="programs-description">
+                        Learn smartly with us. We teach 'One Smart Lesson' at a time!
+                    </p>
+                    <button class="btn btn-outline">
+                        Enroll Now
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div class="program-card">
-                <img src="https://images.pexels.com/photos/8535236/pexels-photo-8535236.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elementary" class="program-img">
-                <div class="program-content">
-                    <h3 class="program-title">Elementary Program</h3>
-                    <p>Fostering curiosity and critical thinking</p>
+            
+            <div class="programs-grid">
+                <div class="program-card" style="background-color: #FF7F50;">
+                    <div class="program-content">
+                        <h3 class="program-title">Life Skills for Kids</h3>
+                        <p class="program-description">Practical skills for everyday life</p>
+                        <img src="https://images.pexels.com/photos/8617855/pexels-photo-8617855.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Life Skills" class="program-image">
+                    </div>
                 </div>
-            </div>
-            <div class="program-card">
-                <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Middle School" class="program-img">
-                <div class="program-content">
-                    <h3 class="program-title">Middle School</h3>
-                    <p>Preparing students for academic excellence</p>
+                <div class="program-card" style="background-color: #4CAF50;">
+                    <div class="program-content">
+                        <h3 class="program-title">Imagination is power</h3>
+                        <p class="program-description">Developing creative thinking</p>
+                        <img src="https://images.pexels.com/photos/8535236/pexels-photo-8535236.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Imagination" class="program-image">
+                    </div>
+                </div>
+                <div class="program-card" style="background-color: #2196F3;">
+                    <div class="program-content">
+                        <h3 class="program-title">Grow your own wings</h3>
+                        <p class="program-description">Building independence and confidence</p>
+                        <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Independence" class="program-image">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Activities Section -->
+    <section class="activities">
+        <div class="container">
+            <div class="activities-header">
+                <p class="section-subtitle">We focus on one impactful lesson at a time</p>
+                <h2 class="section-title">
+                    Shaping the <span class="text-accent">future</span> of kids
+                </h2>
+            </div>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/8535230/pexels-photo-8535230.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Letter Identification">
+                    </div>
+                    <h3 class="activity-title">Letter Identification</h3>
+                    <p class="activity-description">Class - Pre School</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/8535242/pexels-photo-8535242.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="General Knowledge">
+                    </div>
+                    <h3 class="activity-title">General Knowledge</h3>
+                    <p class="activity-description">Fourth Grade</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/8411927/pexels-photo-8411927.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Geography Quiz">
+                    </div>
+                    <h3 class="activity-title">Geography Quiz</h3>
+                    <p class="activity-description">First Grade</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.pexels.com/photos/8535187/pexels-photo-8535187.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Visual Arts">
+                    </div>
+                    <h3 class="activity-title">Visual Arts Training</h3>
+                    <p class="activity-description">Sketching class</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" style="background-color: #FFD700;">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Confidence that builds a brighter future.</h3>
+                        <p class="feature-description">Encourage kids to find confidence in creativity & create a successful future.</p>
+                        <button class="feature-cta">
+                            Book Now
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <img src="https://images.pexels.com/photos/8535264/pexels-photo-8535264.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Confidence" class="feature-image">
+                </div>
+                <div class="feature-card" style="background-color: #FF7F50;">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Helping kids to shoot their dreams.</h3>
+                        <p class="feature-description">Inspiring kids to aim achieve.</p>
+                        <button class="feature-cta">
+                            Learn More
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <img src="https://images.pexels.com/photos/8535237/pexels-photo-8535237.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Dreams" class="feature-image">
+                </div>
+            </div>
+            
+            <!-- Admission Section -->
+            <div class="admission-section">
+                <div class="admission-content">
+                    <div class="admission-text">
+                        <span class="admission-badge">Admission on going</span>
+                        <h2 class="admission-title">
+                            Empower your kids<br>
+                            to think be <span class="text-brown">smarter</span><br>
+                            and <span class="text-brown">sharper</span>
+                        </h2>
+                        <p class="admission-description">
+                            Encourage kids to think critically, be creative, and<br>
+                            solve problems for a better future.
+                        </p>
+                        <button class="btn btn-primary">
+                            Get Educated
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="admission-image">
+                        <img src="https://images.pexels.com/photos/8535181/pexels-photo-8535181.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Happy student" class="main-admission-image">
+                        
+                        <div class="admission-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">45M+</span>
+                                <span class="stat-label">Students helped across the globe</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">164+</span>
+                                <span class="stat-label">Nations participating in the Olympiad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Event Section -->
+    <section class="upcoming-event">
+        <div class="container">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://images.pexels.com/photos/8422152/pexels-photo-8422152.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                         alt="Children learning together">
+                </div>
+                
+                <div class="event-content">
+                    <span class="event-badge">Upcoming Event</span>
+                    
+                    <h2 class="event-title">
+                        Building children<br>
+                        one at a time
+                    </h2>
+                    
+                    <p class="event-description">
+                        Customize Flood from the Founders of Educational Excellence
+                    </p>
+                    
+                    <div class="event-date">
+                        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>07 March 2025</span>
+                    </div>
+                    
+                    <div class="event-features">
+                        <div class="event-feature">
+                            <div class="feature-number">1</div>
+                            <p>Individual attention for every child</p>
+                        </div>
+                        <div class="event-feature">
+                            <div class="feature-number">2</div>
+                            <p>Customized learning paths</p>
+                        </div>
+                        <div class="event-feature">
+                            <div class="feature-number">3</div>
+                            <p>Focus on holistic development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Section -->
+    <section id="campus" class="campus">
+        <div class="container">
+            <div class="campus-header">
+                <h2 class="section-title">Our <span class="text-accent">Campuses</span></h2>
+                <p class="section-description">
+                    Discover our state-of-the-art educational facilities designed to inspire learning, 
+                    creativity, and growth in a safe and nurturing environment.
+                </p>
+            </div>
+            
+            <div class="campus-grid">
+                <div class="campus-card">
+                    <div class="campus-image">
+                        <img src="https://images.pexels.com/photos/256395/pexels-photo-256395.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Main Campus">
+                    </div>
+                    <div class="campus-info">
+                        <h3 class="campus-name">Main Campus</h3>
+                        <div class="campus-address">
+                            <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <p>123 Education Lane, Learning City, LC 12345</p>
+                        </div>
+                        <p class="campus-description">
+                            Our flagship campus features state-of-the-art classrooms, interactive learning spaces, 
+                            and extensive outdoor play areas designed to stimulate creativity and learning.
+                        </p>
+                        <button class="btn btn-primary campus-btn">Schedule a Visit</button>
+                    </div>
+                </div>
+                
+                <div class="campus-card">
+                    <div class="campus-image">
+                        <img src="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Innovation Center">
+                    </div>
+                    <div class="campus-info">
+                        <h3 class="campus-name">Innovation Center</h3>
+                        <div class="campus-address">
+                            <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <p>456 Technology Drive, Innovation Park, IP 67890</p>
+                        </div>
+                        <p class="campus-description">
+                            Our technology-focused campus specializes in STEM education with advanced computer labs, 
+                            robotics workshops, and collaborative spaces for project-based learning.
+                        </p>
+                        <button class="btn btn-primary campus-btn">Schedule a Visit</button>
+                    </div>
+                </div>
+                
+                <div class="campus-card">
+                    <div class="campus-image">
+                        <img src="https://images.pexels.com/photos/2468339/pexels-photo-2468339.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Arts & Culture Center">
+                    </div>
+                    <div class="campus-info">
+                        <h3 class="campus-name">Arts & Culture Center</h3>
+                        <div class="campus-address">
+                            <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <p>789 Creative Avenue, Artsville, AV 54321</p>
+                        </div>
+                        <p class="campus-description">
+                            Dedicated to nurturing artistic expression, this campus features specialized studios 
+                            for visual arts, music, dance, and theater with regular performances and exhibitions.
+                        </p>
+                        <button class="btn btn-primary campus-btn">Schedule a Visit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-title">Contact Our Campus Team</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div>
+                                <p>Main Administrative Office</p>
+                                <p>123 Education Lane</p>
+                                <p>Learning City, LC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <p>(555) 123-4567</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <p>campus@sankalpschool.com</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <p>Tours available Monday-Friday, 9am-4pm</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="program">Program of Interest</label>
+                            <select id="program" name="program" required>
+                                <option value="">Select Program</option>
+                                <option value="early-childhood">Early Childhood</option>
+                                <option value="elementary">Elementary</option>
+                                <option value="middle-school">Middle School</option>
+                                <option value="after-school">After School Programs</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-brand">
+                        Sankalp Public School<span class="accent">.</span>
+                    </h3>
+                    <p class="footer-description">
+                        Empowering the next generation with the skills and knowledge they need to succeed in an ever-changing world.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#campus">Campus</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Early Childhood</a></li>
+                        <li><a href="#">Elementary</a></li>
+                        <li><a href="#">Middle School</a></li>
+                        <li><a href="#">Summer Camps</a></li>
+                        <li><a href="#">After School</a></li>
+                        <li><a href="#">Online Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div>
+                                <p>123 Education Lane</p>
+                                <p>Learning City, LC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <p>(555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <p>info@sankalpschool.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sankalp Public School. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        /* CSS Variables */
+:root {
+    --primary: #4A2511;
+    --accent: #FF7F50;
+    --bg-light: #f8f5f0;
+    --brown: #964B00;
+    --white: #ffffff;
+    --gray-100: #f7fafc;
+    --gray-200: #edf2f7;
+    --gray-300: #e2e8f0;
+    --gray-400: #cbd5e0;
+    --gray-500: #a0aec0;
+    --gray-600: #718096;
+    --gray-700: #4a5568;
+    --gray-800: #2d3748;
+    --gray-900: #1a202c;
+    --green: #4CAF50;
+    --blue: #2196F3;
+    --yellow: #FFD700;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--gray-800);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Typography */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: var(--gray-700);
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+.text-brown { color: var(--brown); }
+.accent { color: var(--accent); }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #FF6B41;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.arrow-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    stroke-width: 2;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-light);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: white;
+    padding: 0.75rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Get Started Button Responsive Styles */
+.nav-container .btn-outline {
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 4rem;
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    min-height: 60vh;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.check-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--green);
+}
+
+.hero-cta {
+    margin-bottom: 2rem;
+}
+
+.hero-description {
+    color: var(--gray-600);
+    max-width: 28rem;
+}
+
+.hero-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-image {
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.main-image {
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+
+.secondary-image {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: -2rem;
+    right: -4rem;
+    z-index: 20;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: pulse 2s infinite;
+}
+
+.bg-circle-1 {
+    width: 14rem;
+    height: 14rem;
+    background: var(--green);
+    top: -2.5rem;
+    left: -5rem;
+}
+
+.bg-circle-2 {
+    width: 10rem;
+    height: 10rem;
+    background: var(--yellow);
+    top: 1rem;
+    right: -1rem;
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Statistics Section */
+.statistics {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.stat-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+}
+
+.stat-number {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.875rem;
+    line-height: 2.rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-description {
+    color: var(--gray-300);
+}
+
+/* Programs Section */
+.programs {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.programs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.programs-text {
+    flex: 1;
+}
+
+.programs-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.programs-description {
+    color: var(--gray-700);
+    max-width: 20rem;
+    text-align: right;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-content {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.program-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.program-description {
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.program-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Activities Section */
+.activities {
+    padding: 4rem 0;
+    background: white;
+}
+
+.activities-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.activity-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-image {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.activity-description {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.feature-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    color: var(--gray-800);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.feature-cta {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.feature-cta:hover {
+    color: var(--accent);
+}
+
+.feature-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+/* Admission Section */
+.admission-section {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.admission-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.admission-text {
+    flex: 1;
+}
+
+.admission-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent);
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.admission-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.admission-description {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+.admission-image {
+    flex: 1;
+    position: relative;
+}
+
+.main-admission-image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.admission-stats {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+/* Upcoming Event Section */
+.upcoming-event {
+    padding: 4rem 0;
+    background: white;
+}
+
+.event-card {
+    display: flex;
+    background: var(--gray-100);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.event-image {
+    flex: 1;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    flex: 1;
+    padding: 3rem;
+    background: var(--yellow);
+}
+
+.event-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: white;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.event-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.event-description {
+    color: var(--gray-800);
+    margin-bottom: 1.5rem;
+}
+
+.event-date {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.calendar-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    stroke-width: 2;
+}
+
+.event-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.event-feature p {
+    color: var(--primary);
+}
+
+/* Campus Section */
+.campus {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.campus-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.campus-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.campus-image {
+    height: 12rem;
+    overflow: hidden;
+}
+
+.campus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.campus-card:hover .campus-image img {
+    transform: scale(1.1);
+}
+
+.campus-info {
+    padding: 1.5rem;
+}
+
+.campus-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.campus-address {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.location-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accent);
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    stroke-width: 2;
+}
+
+.campus-address p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.campus-description {
+    color: var(--gray-700);
+    margin-bottom: 1.5rem;
+}
+
+.campus-btn {
+    width: 100%;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 0;
+    background: white;
+}
+
+.contact-content {
+    display: flex;
+    gap: 3rem;
+}
+
+.contact-info {
+    flex: 1;
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 0.75rem;
+}
+
+.contact-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.contact-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    stroke-width: 2;
+}
+
+.contact-item p {
+    color: var(--gray-700);
+}
+
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.1);
+}
+
+.form-submit {
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-description {
+    color: var(--gray-300);
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 2rem;
+    height: 2rem;
+    color: var(--gray-300);
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: white;
+}
+
+.social-link svg {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--gray-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact .contact-item {
+    margin-bottom: 1rem;
+}
+
+.footer-contact .contact-item p {
+    color: var(--gray-300);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--gray-700);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--gray-300);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-container .btn-outline {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Hide Get Started button on mobile, show in mobile menu instead */
+    .nav-container > .btn-outline {
+        display: none;
+    }
+
+    /* Add Get Started button to mobile menu */
+    .nav-menu .btn-outline {
+        display: inline-flex;
+        margin-top: 1rem;
+        align-self: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .programs-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .programs-description {
+        text-align: center;
+    }
+
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-content {
+        flex-direction: column;
+    }
+
+    .admission-stats {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-brand h1 {
+        font-size: 1.25rem;
+    }
+
+    .nav-container .btn-outline {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-image {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .admission-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.125rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+    </style>
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('.nav');
+        // Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navbar = document.querySelector('.navbar');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
+    // Mobile menu toggle
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Animate hamburger menu
+        const spans = navToggle.querySelectorAll('span');
+        if (navMenu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
         });
+    });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.header-content')) {
-                nav.classList.remove('active');
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
+    });
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            showNotification('Thank you for your message! We will get back to you soon.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // Animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.stat-card, .program-card, .activity-card, .feature-card, .campus-card');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Counter animation for statistics
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace(/\D/g, ''));
+            const suffix = counter.textContent.replace(/\d/g, '');
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current) + suffix;
+                }
+            }, 20);
+        });
+    }
+
+    // Trigger counter animation when statistics section is visible
+    const statsSection = document.querySelector('.statistics');
+    if (statsSection) {
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.5 });
+        
+        statsObserver.observe(statsSection);
+    }
+
+    // Button click effects
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         });
+    });
+
+    // Image lazy loading
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.bg-circle');
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // Modal functionality (for future use)
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span>${message}</span>
+                <button class="notification-close">&times;</button>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 5000);
+        
+        // Close button functionality
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+            notification.remove();
+        });
+    }
+
+    // Search functionality (for future implementation)
+    function initSearch() {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                // Implement search logic here
+                console.log('Searching for:', query);
+            });
+        }
+    }
+
+    // Initialize search
+    initSearch();
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        // ESC key to close modals
+        if (e.key === 'Escape') {
+            const openModals = document.querySelectorAll('.modal[style*="flex"]');
+            openModals.forEach(modal => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
+
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Apply debounce to scroll events
+    const debouncedScrollHandler = debounce(function() {
+        // Scroll-based animations and effects
+        const scrolled = window.pageYOffset;
+        
+        // Update navbar
+        if (scrolled > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Parallax effects
+        const parallaxElements = document.querySelectorAll('.bg-circle');
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    }, 10);
+
+    window.addEventListener('scroll', debouncedScrollHandler);
+
+    // Accessibility improvements
+    document.addEventListener('keydown', function(e) {
+        // Tab navigation for custom elements
+        if (e.key === 'Tab') {
+            const focusableElements = document.querySelectorAll(
+                'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            );
+            
+            // Add focus styles
+            focusableElements.forEach(el => {
+                el.addEventListener('focus', function() {
+                    this.style.outline = '2px solid var(--accent)';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                el.addEventListener('blur', function() {
+                    this.style.outline = 'none';
+                });
+            });
+        }
+    });
+
+    // Print styles handler
+    window.addEventListener('beforeprint', function() {
+        // Hide unnecessary elements when printing
+        const hideOnPrint = document.querySelectorAll('.nav-toggle, .social-links');
+        hideOnPrint.forEach(el => {
+            el.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('afterprint', function() {
+        // Restore elements after printing
+        const hideOnPrint = document.querySelectorAll('.nav-toggle, .social-links');
+        hideOnPrint.forEach(el => {
+            el.style.display = '';
+        });
+    });
+
+    console.log('Sankalp Public School website loaded successfully!');
+});
+
+// Additional CSS for notifications and ripple effects
+const additionalStyles = `
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+        animation: slideInRight 0.3s ease;
+    }
+
+    .notification-success {
+        border-left: 4px solid var(--green);
+    }
+
+    .notification-error {
+        border-left: 4px solid #f56565;
+    }
+
+    .notification-info {
+        border-left: 4px solid var(--blue);
+    }
+
+    .notification-content {
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .notification-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: var(--gray-500);
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .notification-close:hover {
+        color: var(--gray-700);
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: rippleEffect 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .btn {
+        position: relative;
+        overflow: hidden;
+    }
+
+    @media print {
+        .navbar, .footer, .btn {
+            display: none !important;
+        }
+        
+        body {
+            font-size: 12pt;
+            line-height: 1.4;
+        }
+        
+        .section-title {
+            font-size: 18pt;
+            margin-bottom: 12pt;
+        }
+    }
+`;
+
+// Inject additional styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
